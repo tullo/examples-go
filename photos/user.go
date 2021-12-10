@@ -26,8 +26,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/cockroachdb/cockroach-go/crdb"
-	"github.com/codahale/hdrhistogram"
+	"github.com/HdrHistogram/hdrhistogram-go"
+	"github.com/cockroachdb/cockroach-go/v2/crdb"
 	"github.com/pkg/errors"
 	"golang.org/x/net/context"
 )
@@ -141,7 +141,7 @@ func startStats(ctx context.Context) error {
 		select {
 		case <-ticker.C:
 			stats.Lock()
-			opsPerSec := float64(stats.totalOps-lastOps) / float64(statsInterval/1E9)
+			opsPerSec := float64(stats.totalOps-lastOps) / float64(statsInterval/1e9)
 			log.Printf("%d ops, %d no-user, %d no-photo, %d analytics, %d errs (%.2f/s)",
 				stats.totalOps, stats.noUserOps, stats.noPhotoOps,
 				stats.noAnalyticsOps, stats.failedOps, opsPerSec,

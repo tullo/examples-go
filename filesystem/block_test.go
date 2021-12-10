@@ -24,7 +24,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/cockroachdb/cockroach-go/testserver"
+	"github.com/cockroachdb/cockroach-go/v2/testserver"
 	"github.com/cockroachdb/cockroach/pkg/util/randutil"
 )
 

@@ -27,7 +27,7 @@ import (
 	"sync"
 	"syscall"
 
-	"github.com/cockroachdb/cockroach-go/crdb"
+	"github.com/cockroachdb/cockroach-go/v2/crdb"
 
 	"bazil.org/fuse"
 	"bazil.org/fuse/fs"

@@ -21,7 +21,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/cockroachdb/cockroach-go/testserver"
+	"github.com/cockroachdb/cockroach-go/v2/testserver"
 )
 
 // TestAllOps runs every operation once and ensures that they complete
