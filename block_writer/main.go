@@ -36,8 +36,8 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/codahale/hdrhistogram"
-	"github.com/satori/go.uuid"
+	"github.com/HdrHistogram/hdrhistogram-go"
+	"github.com/google/uuid"
 
 	// Import postgres driver.
 	_ "github.com/lib/pq"
@@ -113,7 +113,11 @@ func newBlockWriter(db *sql.DB) *blockWriter {
 func (bw *blockWriter) run(errCh chan<- error, wg *sync.WaitGroup) {
 	defer wg.Done()
 
-	id := uuid.Must(uuid.NewV4()).String()
+	nr, err := uuid.NewRandom()
+	if err != nil {
+		log.Fatal(err)
+	}
+	id := nr.String()
 	var blockCount uint64
 
 	for {
