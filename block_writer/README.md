@@ -15,7 +15,7 @@ Run against an existing cockroach node or cluster.
 # Launch your node or cluster in insecure mode (with --insecure passed to cockroach).
 # Find a reachable address: [mycockroach:26257].
 # Run the example with:
-./block_writer postgres://root@mycockroach:26257?sslmode=disable
+./block_writer "postgresql://admin@localhost:26257?sslmode=disable"
 ```
 
 #### Secure node or cluster

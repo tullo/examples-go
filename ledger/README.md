@@ -27,7 +27,7 @@ docker run -d -p 5432:5432 postgres  # for Postgres
 For Postgres, change 26257 to 5432 below.
 
 ```
-go run $GOPATH/src/github.com/cockroachdb/examples-go/ledger/main.go --concurrency 5 --sources 10 --destinations 10 postgres://root@localhost:26257?sslmode=disable
+./ledger --concurrency 5 --sources 10 --destinations 10 "postgresql://admin@localhost:26257?sslmode=disable"
 ```
 
 This runs a moderately contended example, transferring money between ten random
