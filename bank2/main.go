@@ -30,6 +30,7 @@ import (
 	"time"
 
 	"github.com/cockroachdb/cockroach-go/v2/crdb"
+	_ "github.com/lib/pq"
 )
 
 const systemAccountID = 0
