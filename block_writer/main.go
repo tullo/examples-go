@@ -122,7 +122,7 @@ func (bw *blockWriter) run(errCh chan<- error, wg *sync.WaitGroup) {
 
 	for {
 		var buf bytes.Buffer
-		var args []interface{}
+		var args []any
 		fmt.Fprintf(&buf, "%s", insertBlockStmt)
 
 		for i := 0; i < *batch; i++ {
